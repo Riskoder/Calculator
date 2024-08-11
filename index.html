@@ -8,43 +8,44 @@
   </head>
   <body>
     <main class="main">
-      <div class="calculator">
-        <div class="display">
-          <div class="current-operation"></div>
-          <div class="operation-result"></div>
+      <div class="calculator-container">
+        <div class="displays">
+          <div class="operation-display"></div>
+          <div class="result-display">0</div>
         </div>
-        <div class="buttons-layout">
-          <button class="delete-btn btn-red-clr">Delete</button>
-          <button class="btn clear-btn blue-clr">Clear</button>
+        <div class="buttons-container">
+          <button class="btn btn-operator clear-all">CA</button>
+          <button class="btn btn-operator clear-element">CE</button>
+          <button class="btn btn-operator">x</button>
+          <button class="btn btn-operator">/</button>
 
-          <button class="btn number grey-clr" value="7">7</button>
-          <button class="btn number grey-clr" value="8">8</button>
-          <button class="btn number grey-clr" value="9">9</button>
-          <button class="btn operator white-clr" value="/">/</button>
+          <button class="btn btn-number">7</button>
+          <button class="btn btn-number">8</button>
+          <button class="btn btn-number">9</button>
+          <button class="btn btn-operator">-</button>
 
-          <button class="btn number grey-clr" value="4">4</button>
-          <button class="btn number grey-clr" value="5">5</button>
-          <button class="btn number grey-clr" value="6">6</button>
-          <button class="btn operator white-clr" value="x">x</button>
+          <button class="btn btn-number">4</button>
+          <button class="btn btn-number">5</button>
+          <button class="btn btn-number">6</button>
+          <button class="btn btn-operator">+</button>
 
-          <button class="btn number grey-clr" value="3">3</button>
-          <button class="btn number grey-clr" value="2">2</button>
-          <button class="btn number grey-clr" value="1">1</div>
-          <button class="btn operator white-clr" value="-">-</button>
+          <button class="btn btn-number">1</button>
+          <button class="btn btn-number">2</button>
+          <button class="btn btn-number">3</button>
+          <button class="btn btn-operator equal">=</button>
 
-          <button class="btn number grey-clr" value="0">0</button>
-          <button class="btn operator white-clr" value=".">.</button>
-          <button class="btn operator white-clr" value="=">=</button>
-          <button class="btn operator white-clr" value="+">+</button>
+          <button class="btn btn-number cero">0</button>
+          <button class="btn btn-operator">.</button>
         </div>
       </div>
     </main>
     <footer class="footer">
       <h2 class="title">
         Made By
-        <a href="https://github.com/Riskoder/Calculator" class="link"
-          >Riskoder</a
-        >
+        <a href="https://github.com/Riskoder/Calculator" class="link">
+          <span class="color1">Ris</span><span class="color2">ko</span
+          ><span class="color3">der</span>
+        </a>
       </h2>
     </footer>
     <script src="script.js"></script>
