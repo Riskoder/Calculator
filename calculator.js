@@ -53,7 +53,7 @@ function appendOperator(operatorSymbol) {
     if (firstOperand === '0') {
       displayCalculation.textContent = '0';
     } else {
-      displayCalculation.textContent = firstOperand;
+      displayCalculation.textContent = roundNumber(firstOperand);
     }
   }
   operator = operatorSymbol;
@@ -83,7 +83,7 @@ function equal() {
   if (firstOperand && operator && secondOperand) {
     firstOperand = evaluate(firstOperand, secondOperand, operator);
     secondOperand = '';
-    displayCalculation.textContent = firstOperand;
+    displayCalculation.textContent = roundNumber(firstOperand);
     displayCurrentNumber.textContent = '0';
     operator = null;
   }
@@ -110,4 +110,8 @@ function setPoint() {
   } else if (!displayScreen.includes('.')) {
     displayCurrentNumber.textContent += '.';
   }
+}
+
+function roundNumber(num) {
+  return Math.round(num * 1000) / 1000;
 }
