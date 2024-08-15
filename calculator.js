@@ -1,8 +1,3 @@
-let firstOperand = '';
-let secondOperand = '';
-let operator = null;
-
-//All Buttons Selectors
 const numberButtons = document.querySelectorAll('.btn-number');
 const operatorButtons = document.querySelectorAll('.btn-operator');
 const clearAllButton = document.querySelector('.clear-all');
@@ -12,7 +7,10 @@ const equalButton = document.querySelector('.equal');
 const displayCalculation = document.querySelector('.operation-display');
 const displayCurrentNumber = document.querySelector('.result-display');
 
-//All events
+let firstOperand = '';
+let secondOperand = '';
+let operator = null;
+
 clearAllButton.addEventListener('click', clearAll);
 clearElementButton.addEventListener('click', deleteElement);
 pointButton.addEventListener('click', setPoint);
