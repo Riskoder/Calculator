@@ -71,7 +71,7 @@ function evaluate(a, b, op) {
     case '-':
       return String(num1 - num2);
     case '/':
-      return num2 !== 0 ? String(num1 / num2) : 'Error';
+      return num2 !== 0 ? String(num1 / num2) : 'Infinity';
     case '*':
       return String(num1 * num2);
     default:
@@ -113,5 +113,8 @@ function setPoint() {
 }
 
 function roundNumber(num) {
+  if (num === 'Error') {
+    return 'Infinity';
+  }
   return Math.round(num * 1000) / 1000;
 }
