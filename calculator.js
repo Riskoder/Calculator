@@ -36,7 +36,7 @@ function appendNumber(number) {
     displayCurrentNumber.textContent += number;
   }
 
-  if (operator === null || operator === '') {
+  if (operator === null) {
     firstOperand = displayCurrentNumber.textContent;
     displayCalculation.textContent = displayCurrentNumber.textContent;
   }
@@ -62,8 +62,8 @@ function appendOperator(operatorSymbol) {
 }
 
 function evaluate(a, b, op) {
-  num1 = Number.parseFloat(a);
-  num2 = Number.parseFloat(b);
+  const num1 = Number.parseFloat(a);
+  const num2 = Number.parseFloat(b);
 
   switch (op) {
     case '+':
@@ -75,7 +75,7 @@ function evaluate(a, b, op) {
     case '*':
       return String(num1 * num2);
     default:
-      break;
+      return '0';
   }
 }
 
@@ -98,10 +98,14 @@ function clearAll() {
 }
 
 function deleteElement() {
-  if (displayCurrentNumber.textContent === '0') return;
-  displayCurrentNumber.textContent = displayCurrentNumber.textContent
-    .toString()
-    .slice(0, -1);
+  if (displayCurrentNumber.textContent.length > 1) {
+    displayCurrentNumber.textContent = displayCurrentNumber.textContent.slice(
+      0,
+      -1
+    );
+  } else {
+    displayCurrentNumber.textContent = '0';
+  }
   if (operator === null) {
     firstOperand = displayCurrentNumber.textContent;
     displayCalculation.textContent = displayCurrentNumber.textContent;
@@ -111,10 +115,7 @@ function deleteElement() {
 }
 
 function setPoint() {
-  const displayScreen = displayCurrentNumber.textContent;
-  if (displayScreen === '') {
-    displayCurrentNumber.textContent += '0.';
-  } else if (!displayScreen.includes('.')) {
+  if (!displayCurrentNumber.textContent.includes('.')) {
     displayCurrentNumber.textContent += '.';
   }
 }
