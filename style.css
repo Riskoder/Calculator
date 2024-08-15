@@ -28,7 +28,6 @@ body {
 }
 
 .calculator-container {
-  width: 420px;
   padding: 20px;
   border: 1px solid var(--border-clr);
   border-radius: 10px;
@@ -71,7 +70,7 @@ body {
   font-weight: 600;
   background-color: var(--bg-clr);
   border: 2px solid var(--border-clr);
-  border-radius: 12px;
+  border-radius: 10px;
   color: whitesmoke;
   cursor: pointer;
 }
