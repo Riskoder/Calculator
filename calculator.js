@@ -50,7 +50,7 @@ function appendOperator(operatorSymbol) {
     displayCalculation.textContent = '';
     firstOperand = evaluate(firstOperand, secondOperand, operator);
     secondOperand = '';
-    if (firstOperand === '0') {
+    if (firstOperand === '0' || firstOperand === '') {
       displayCalculation.textContent = '0';
     } else {
       displayCalculation.textContent = roundNumber(firstOperand);
@@ -98,9 +98,16 @@ function clearAll() {
 }
 
 function deleteElement() {
+  if (displayCurrentNumber.textContent === '0') return;
   displayCurrentNumber.textContent = displayCurrentNumber.textContent
     .toString()
     .slice(0, -1);
+  if (operator === null) {
+    firstOperand = displayCurrentNumber.textContent;
+    displayCalculation.textContent = displayCurrentNumber.textContent;
+  } else {
+    secondOperand = displayCurrentNumber.textContent;
+  }
 }
 
 function setPoint() {
@@ -113,7 +120,7 @@ function setPoint() {
 }
 
 function roundNumber(num) {
-  if (num === 'Error') {
+  if (num === 'Infinity') {
     return 'Infinity';
   }
   return Math.round(num * 1000) / 1000;
